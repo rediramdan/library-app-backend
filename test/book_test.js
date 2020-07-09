@@ -11,13 +11,27 @@ describe('Book.js', () => {
                 .get('/book')
                 .end((err, res) => {
                     chai.assert.equal(res.status, 200);
+                    chai.assert.typeOf(res.body.data, 'array');
                 })
         })
         it('get book detail results are correct', () => {
             chai.request('http://192.168.43.67:3001')
-                .get('/book/31')
+                .get('/book/3')
                 .end((err, res) => {
                     chai.assert.equal(res.status, 200);
+                })
+        })
+    })
+})
+
+describe('Genre.js', () => {
+    describe('/genre', () => {
+        it('get genre results are correct', () => {
+            chai.request('http://192.168.43.67:3001')
+                .get('/genre')
+                .end((err, res) => {
+                    chai.assert.equal(res.status, 200);
+                    chai.assert.typeOf(res.body.data, 'array');
                 })
         })
     })
