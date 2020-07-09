@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
+    "test-with-coverage": "nyc mocha",
     "start": "nodemon app.js"
   },
   "author": "",
@@ -21,5 +22,11 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.3",
     "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
   }
 }
