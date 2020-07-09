@@ -5,8 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "test-with-coverage": "nyc mocha",
+    "test-with-coverage": "nyc mocha --exit test",
     "start": "nodemon app.js"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "text",
+      "text-summary"
+    ]
   },
   "author": "",
   "license": "ISC",
